@@ -1,6 +1,6 @@
 name: 'website-build-deploy'
 
-run-name: 'website-build-deploy - #${{ github.run_number }} - ${{ github.ref }}'
+run-name: 'website-build-deploy - ${{ github.ref }} #${{ github.run_number }}'
 
 on:
   push:
@@ -8,6 +8,11 @@ on:
       - main
 
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: 'website-build-deploy'
@@ -21,4 +26,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: pnpm --version
