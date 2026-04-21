@@ -1,6 +1,6 @@
 name: 'website-build-deploy'
 
-run-name: 'website-build-deploy - #${{ github.run_number }} - ${{ github.sha }}'
+run-name: 'website-build-deploy - #${{ github.run_number }} - ${{ github.ref }}'
 
 on:
   push:
@@ -22,8 +22,3 @@ jobs:
 
       - name: Run a one-line script
         run: echo Hello, world!
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
