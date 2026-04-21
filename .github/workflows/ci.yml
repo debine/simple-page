@@ -30,7 +30,10 @@ jobs:
         name: Install pnpm
         with:
           version: 10
-          cache: true
+          cache: false
 
       - name: Check pnpm version
         run: pnpm --version
+
+      - name: Check working directory
+        run: pwd
